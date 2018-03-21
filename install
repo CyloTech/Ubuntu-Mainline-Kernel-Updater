@@ -4,13 +4,8 @@ if [ -z "$BASH_VERSION" ];then
 	exit
 fi
 here=$(dirname $0)
-if [ $(apt-cache policy php5 | wc -l) -gt 4 ];then
-	php="php5-cli"
-else
-	php="php-cli php-xml"
-fi
 echo "Need a couple dependencies"
-sudo apt-get install -m curl libnotify-bin $php
+sudo apt-get install -y -m curl libnotify-bin
 if [[ ! -f /usr/bin/curl || ! -f /usr/bin/php || ! -f /usr/bin/notify-send ]];then
 	echo "You did not install the dependencies"
 	echo "You need have the curl, php, and notify-send commands available for use"
