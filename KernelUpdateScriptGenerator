@@ -205,12 +205,7 @@ else
 fi
 cd $LOC
 arch=$(dpkg --print-architecture)
-echo "Care to look at the change log? (y=Yes, n=No) (n)"
-if [ $auto -eq 0 ];then
-	read action
-else
-	action="n"
-fi
+action="n"
 if [ "$action" == "y" ];then
 	curl $WHERE/CHANGES 2> /dev/null | less
 	echo "Now that you read the change log, do you want to upgrade (y=Yes, n=No) (y)"
