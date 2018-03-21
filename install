@@ -11,8 +11,6 @@ if [[ ! -f /usr/bin/curl || ! -f /usr/bin/php || ! -f /usr/bin/notify-send ]];th
 	echo "You need have the curl, php, and notify-send commands available for use"
 	exit
 fi
-mkdir -p ~/.config/autostart/
-cp $here/*.desktop ~/.config/autostart/
 chmod +x $here/KernelUpdate*
 sudo cp $here/KernelUpdate* /usr/local/bin/
-echo -e "Install Complete\nUpdates will be checked for 60 seconds after login\nIf you want Release Candidates you will need to edit the new startup entry."
+echo -e "Install Complete\n"
